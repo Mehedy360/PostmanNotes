@@ -1,0 +1,41 @@
+//status code validation
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+//Multiple assertions
+pm.test("validate multiple file in response",function(){
+    responseJson=pm.response.json()
+    pm.expect(responseJson.data.id).to.eql(2);
+    pm.expect(responseJson.data.email).to.eql("janet.weaver@reqres.in");
+    pm.expect(responseJson.data.first_name).to.eql("Janet");
+    pm.expect(responseJson.data.last_name).to.eql("Weaver");
+
+});
+//Handling responses that don't parse
+pm.test("Body contains string",function(){
+    pm.expect(pm.response.text()).to.include("janet.weaver@reqres.in")
+
+
+});
+pm.test("Successful status code",function(){
+    pm.response.to.have.status(200);
+    pm.expect(pm.response.code).to.be.oneOf([200,201])
+
+});
+//Testing headers
+pm.test("Content-Type header present",function(){
+    pm.response.to.have.header("content-Type");
+
+});
+pm.test("Content-Type value",function(){
+    pm.expect(pm.response.headers.get("Content-Type")).to.eql("application/json; charset=utf-8")
+
+})
+//Testing cookies
+pm.test("Cookie value check",function(){
+    pm.expect(pm.cookies.has("__cfduid")).to.be.false
+})
+// Response Time
+pm.test("Response time less than 20 ms",function(){
+    pm.expect(pm.response.responseTime).to.be.below(100)
+});

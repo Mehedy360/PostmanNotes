@@ -1,0 +1,39 @@
+How to run single collection (when includes multiple requests):
+--> Go to Runner--> Select collection requests-->Run
+
+-----------------------------------------------
+How to run postman collection/requests from commands line
+-------------------------------------------------
+
+Pre-requisites:
+---
+1. Download and install Node.js(npm) - Refer document.
+                        open the command prompt 
+                        node -v
+                        npm -v
+2. Install newman
+                        npm install -g newman
+------------------------------------------
+3. To generate html report
+             
+                 npm install newman-reporter-html
+------------------------------------------------------
+
+4. Export collection and then run from command prompt 
+ 
+How many ways we can run collection  through command prompt 
+--------------
+Method 1
+-----------------------------------------------------------------------------------
+Syntax: newman run << exported collection file.json >>
+Example: C:\apitestdata>newman run EmployeeAPIS.postman_collection.json
+-------------------------------------------------------------------------------------
+Method 2 : Generating html report
+
+Example: C:\apitestdata>newman run EmployeeAPIS.postman_collection.json -r html
+------------------------------------------------------------------------------------------
+Method 3 : Executing collection remotely with html report
+you have to share your collection and get the url
+
+Example : C:\apitestdata>newman run https//www.getpostman.com/collections/d073b80c39b9330ebdf7 -r html
+-----------------------------------------------------------------------------------------------------------------------

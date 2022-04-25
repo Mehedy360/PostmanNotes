@@ -1,0 +1,8 @@
+tests['check status code']=responseCode.code=200
+tests['check status in the response']=responseBody.has("success")
+var response = JSON.parse(responseBody);
+tests["check status in the response in exact position"]=response.status=="success"
+pm.test("check  Content-Type header",function()
+{
+pm.response.to.be.header("Content-Type","application/json");
+});

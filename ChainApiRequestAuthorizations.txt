@@ -1,0 +1,30 @@
+How to chain  API Requests
+Authorizations
+-------------------------------------------
+
+API Requests1-------> Response
+
+API Request2--------> Response
+
+Api Chaining 
+--------------------------------------------------------------------------
+jsonData = JSON.parse(responseBody)
+value = jsonData.data[0].first_name
+pm.globals.set("username", value);
+
+-------------------------------------------------------------------
+
+Basic Auth:
+---------------------------------------------------------------
+https://postman-echo.com/basic-auth
+        username: postman
+        password: password
+
+API Key:
+---------------------------------------
+api.openweathermap.org/data/2.5/forecast/daily?q=Delhi&cnt=1
+API Key/appid: fe9c5cddb7e01d747b4611c3fc9eaf2c
+------------------------------------------------------------
+Bearer Token/0Auth 2.0:
+--------------------------
+https://developer.github.com/v3/repos/

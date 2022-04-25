@@ -1,0 +1,29 @@
+How to create own API
+-----------------------------
+1. Instal NodeJS
+                 Download link: https://nodejs.org/en/download/
+
+2. npm comes with node.js
+
+3. install json-server
+                npm install -g json-server
+
+4. create info.json file with sample data (json format)
+                Loc: C:\Users\admin\info.json
+
+
+5. Run the below command to make your API's up and running.
+                json-server info.json
+
+Postman variables
+--------------------------
+postman variables
+-------------------
+1. Collection variables
+2. Environment variables/Global variables
+
+
+Workflows
+--------------------------------------------------
+postman.setNextRequest("RequestName")
+postman.setNextRequest("null")

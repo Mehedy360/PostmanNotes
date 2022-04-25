@@ -1,0 +1,5 @@
+tests['validating Validating response body']=responseBody.has("Janet");
+tests['Validating response body']=responseBody.has('Weaver');
+var response = JSON.parse(responseBody);
+tests['verify firstname']=response.data.first_name == 'Janet';
+tests['verify lastname']=response.data.last_name == 'Weaver';
